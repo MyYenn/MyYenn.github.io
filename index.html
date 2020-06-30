@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Art</title>
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="header_left">
+				<div id="logo">
+					<img src="Img/logo-01-01.png" alt="">
+				</div>
+			</div>
+			<div id="header_mid">
+				<div id="menu">
+					<ul>
+						<li><a href="#" class="home">HOME</a></li>
+						<li><a href="#">ABOUT US</a></li>
+						<li><a href="#">COLLECTION</a></li>
+						<li><a href="#">CONTACT</a></li>
+					</ul>
+				</div>
+			</div>
+		  <div id="header_right">
+				<div id="box_sign">
+					<ul>
+						<li><a href="#"><img src="Img/menu.png" alt="icon_menu" class="icon_menu"></a></li>
+					</ul>
+				</div>	
+		  </div>
+		</div>
+		<div id="content_img">
+			<div id="button"><a href="#">PURCHASE</a></div>
+		</div>
+		<div id="content">
+			<div id="content_mid">
+				<h1>ABOUT US</h1>
+				<span class="line"></span>
+				<div id="content_text">
+					<br/>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+				</div>
+				<div id="content_aboutus">
+					<div class="box">
+						<img src="Img/left-01.jpg" alt="box_left" class="box_img">
+						<p class="box_text">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+					</div>
+					<div class="box">
+						<img src="Img/mid-01.jpg" alt="box_left" class="box_img">
+						<p class="box_text">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+					</div>
+					<div class="box">
+						<img src="Img/right-01.jpg" alt="box_left" class="box_img">
+						<p class="box_text">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
+					</div>
+				</div>
+				<div></div>
+			</div>
+			<div id="content_1">
+				<div id="content_mid_1">
+					<h1>COLLECTION</h1>
+					<span class="line"></span>
+					<div id="content_text_1">
+						<br/>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+						
+					</div>
+					<h3 class="h3">Illustrator Laura H. Rubin</h3>
+					<div class="box_img">
+						<div class="left">
+							<div class="box_left">
+								<img src="Img/img_left_1.jpg" alt="img_left">
+							</div>
+							<div class="box_left_1">
+								<img src="Img/img_left_2.jpg" alt="img_left_1">
+							</div>
+						</div>
+						<div class="mid">
+							<div class="box_mid">
+								<img src="Img/img_mid_1.jpg" alt="img_mid">
+							</div>
+							<div class="box_mid_1">
+								<img src="Img/img_mid_2.jpg" alt="img_mid_1">
+							</div>
+							<div class="box_mid_2">
+								<img src="Img/img_mid_3.jpg" alt="img_mid_2">
+							</div>
+						</div>
+						<div class="right">
+							<div class="box_right">
+								<img src="Img/img_right_2.jpg" alt="img_right">
+							</div>
+							<div class="box_right_1">
+								<img src="Img/img_right_1.jpg" alt="img_right_1">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="content_author">
+				<div id="img_left">
+					<img src="Img/123.jpg" alt="img_left" >
+				</div>
+				<div id="content_right">
+					<span class="line_right"></span>
+					<p class="text_right">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+					<div id="button_right"><a href="#">READ MORE</a></div>
+				</div>
+			</div>
+			<div id="content_2">
+				<div id="content_mid_2">
+					<h1>CONTACT</h1>
+					<span class="line"></span>
+					<div id="content_text_2">
+						<br/>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. There are many variations of passages of Lorem Ipsum available.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<p>ART COMPANY Copyright ©  2010-2020 Art Company S.L. All rights reserved.</p>
+		</div>
+	</div>
+</body>
+	
+<!--	Smooth scroll-->
+	<script type="text/javascript">
+		function anchorLinkHandler(e) {
+			e.preventDefault();
+			const targetID = this.href.slice(this.href.indexOf("#"));
+			const element = document.querySelector(targetID);
+			const originalTop = element.getBoundingClientRect().top;
+			const originalLeft = element.getBoundingClientRect().left;
+
+			window.scrollBy({
+				top: originalTop,
+				left: originalLeft,
+				behavior: "smooth"
+			});
+
+			const checkIfDone = setInterval(function() {
+				currentTop = element.getBoundingClientRect().top;
+				currentLeft = element.getBoundingClientRect().left;
+				if (Math.floor(currentTop) === 0 && Math.floor(currentLeft) === 0) {
+					element.tabIndex = "-1";
+					element.focus();
+					clearInterval(checkIfDone);
+				}
+			}, 100);
+		}
+
+		const linksToAnchors = document.querySelectorAll('a[href^="#"]');
+
+		linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
+
+		// it could probably work in two dimensions too... that'd be kinda cool.
+
+	</script>
+</html>
